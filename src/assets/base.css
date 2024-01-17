@@ -34,6 +34,7 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+  --color-swaron: #5271ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +56,7 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
@@ -62,16 +64,17 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  box-sizing: border-box;
   transition:
     color 0.5s,
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    Roboto,
     Inter,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
-    Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
