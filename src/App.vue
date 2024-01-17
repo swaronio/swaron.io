@@ -1,85 +1,74 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <section class="search-section">
+    <p id="swar">swar<b>o</b>n</p>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div id="search">
+      <input type="text" placeholder="What do you want to learn today? ">
+      <button>Search</button>
     </div>
-  </header>
+  </section>
 
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+section.search-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 600px;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
+section.search-section > #search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  gap: 1rem;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+p#swar {
+  margin: 3rem 0;
+  font-size: 3rem;
+}
+p#swar > b {
+  color: var(--color-swaron);
+  font-weight: 700;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+.search-section > #search input {
+  width: 75%;
+  max-width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-swaron);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: none;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.search-section > #search button {
+  cursor: pointer;
+  width: 25%;
+  max-width: 100%;
+  padding: 1rem;
+  border: 4px solid var(--color-background-mute);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  outline: none;
+  background-color: var(--color-swaron);
+  transition: background-color 0.3s ease-in-out;
 }
 
-nav a:first-of-type {
-  border: 0;
+.search-section > #search button:hover {
+  background-color: rgb(24, 88, 207)
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>
